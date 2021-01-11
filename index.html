@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="Assets/styles.css" rel="stylesheet">
     <title>Code Quiz</title>
 </head>
 <body>
@@ -12,22 +13,22 @@
     </header>
 
     <main>
-        <section>
+        <section id="intro">
             Complete the code quiz within the allotted time. Incorrect answers will result in score time taken away by ten seconds!
             <div>
                 <button class="btn btn-primary" id="start" type="submit">Start</button>
             </div>
         </section>
 
-        <section>
-            <div id="quizQuestion">
-            </div>
-            <div id="score-timer">
-            </div>
+        <section id="quiz" class="hidden">
+            <div id="quiz-question"></div>
+            <div id="quiz-answers"></div>
+            <div id="score-timer"></div>
         </section>
     </main>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="Assets/script.js"></script>
 
 </body>
 </html>
