@@ -1,7 +1,8 @@
 // variables
+var introSection = document.getElementById('intro')
 var startButton = document.getElementById("start")
 var quizSection = document.getElementById('quiz')
-var introSection = document.getElementById('intro')
+var quizAnswers = document.getElementById('quiz-answers')
 var scoreTimerSection = document.getElementById('score-timer')
 var scoreBoardSection = document.getElementById('score-board')
 
@@ -24,7 +25,6 @@ function showCurrentQuestion() {
     var quizQuestion = document.getElementById('quiz-question')
     quizQuestion.textContent = currentQuestion.question
 
-    var quizAnswers = document.getElementById('quiz-answers')
     Object.entries(currentQuestion.answers).forEach(entry => {
         const [key, value] = entry;
         var answerButton = document.createElement("button")
@@ -43,6 +43,9 @@ function answerClicked(event) {
     var answerKey = answerButton.getAttribute("answer-key")
     if (currentQuestion.correctAnswer === answerKey) {
         console.log("correct answer clicked!!!");
+        currentQuestionIndex += 1
+        quizAnswers.innerHTML = ""
+        showCurrentQuestion()
     }
 }
 
@@ -103,7 +106,7 @@ function getScore() {
 // Quiz Questions
 var quizQuestions = [
     {
-        question: "My question will go here?",
+        question: "My question will go here 1?",
         answers: {
             a: "incorrect answer",
             b: "correct answer",
@@ -112,7 +115,7 @@ var quizQuestions = [
         correctAnswer: "b"
     },
     {
-        question: "My question will go here?",
+        question: "My question will go here2?",
         answers: {
             a: "incorrect answer",
             b: "incorrect answer",
@@ -121,7 +124,7 @@ var quizQuestions = [
         correctAnswer: "c"
     },
     {
-        question: "My question will go here?",
+        question: "My question will go here3?",
         answers: {
             a: "incorrect answer",
             b: "incorrect answer",
@@ -130,7 +133,7 @@ var quizQuestions = [
         correctAnswer: "c"
     },
     {
-        question: "My question will go here?",
+        question: "My question will go here4?",
         answers: {
             a: "incorrect answer",
             b: "incorrect answer",
@@ -139,7 +142,7 @@ var quizQuestions = [
         correctAnswer: "c"
     },
     {
-        question: "My question will go here?",
+        question: "My question will go here5?",
         answers: {
             a: "incorrect answer",
             b: "incorrect answer",
