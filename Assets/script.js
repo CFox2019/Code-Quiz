@@ -2,6 +2,7 @@
 var introSection = document.getElementById('intro')
 var startButton = document.getElementById("start")
 var quizSection = document.getElementById('quiz')
+var quizQuestions = document.getElementById('quiz-questions')
 var quizAnswers = document.getElementById('quiz-answers')
 var scoreTimerSection = document.getElementById('score-timer')
 var scoreBoardSection = document.getElementById('score-board')
