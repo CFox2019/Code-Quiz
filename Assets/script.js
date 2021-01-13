@@ -2,7 +2,6 @@
 var introSection = document.getElementById('intro')
 var startButton = document.getElementById("start")
 var quizSection = document.getElementById('quiz')
-var quizQuestions = document.getElementById('quiz-questions')
 var quizAnswers = document.getElementById('quiz-answers')
 var scoreTimerSection = document.getElementById('score-timer')
 var scoreBoardSection = document.getElementById('score-board')
@@ -43,9 +42,12 @@ function answerClicked(event) {
     console.log("answer button", answerButton);
     var answerKey = answerButton.getAttribute("answer-key")
     if (currentQuestion.correctAnswer === answerKey) {
-        console.log("correct answer clicked!!!");
         currentQuestionIndex += 1
-        quizAnswers.innerHTML = ""
+        quizAnswers.innerHTML = "Correct"
+        showCurrentQuestion()
+    } else {
+        currentQuestionIndex +=1
+        quizAnswers.innerHTML = "Wrong answer"
         showCurrentQuestion()
     }
 }
@@ -54,7 +56,7 @@ function answerClicked(event) {
 function startTimer() {
     timer = setInterval(function() {
         timerCount--
-    }, 1000)
+    }, 60000)
 }
 
 
