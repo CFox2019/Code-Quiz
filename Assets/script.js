@@ -106,48 +106,48 @@ function getScore() {
 // Quiz Questions
 var quizQuestions = [
     {
-        question: "My question will go here 1?",
+        question: "What is JavaScript?",
         answers: {
-            a: "incorrect answer",
-            b: "correct answer",
-            c: "incorrect answer"
+            a: "language used to style an HTML document",
+            b: "a scripting or programming language that allows you to implement complex features on web pages",
+            c: "the standard markup language for Web pages"
         },
         correctAnswer: "b"
     },
     {
-        question: "My question will go here2?",
+        question: "What does a CSS rule-set contain?",
         answers: {
-            a: "incorrect answer",
-            b: "incorrect answer",
-            c: "correct answer"
+            a: "variable",
+            b: "boolean",
+            c: "selector and a declaration block"
         },
         correctAnswer: "c"
     },
     {
-        question: "My question will go here3?",
+        question: "A JavaScript function is defined with the ________ keyword?",
         answers: {
-            a: "incorrect answer",
-            b: "incorrect answer",
-            c: "correct answer"
+            a: "function",
+            b: "variable",
+            c: "name"
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "How can you access an array element?",
+        answers: {
+            a: "by its variable",
+            b: "by using .length",
+            c: "by its index number"
         },
         correctAnswer: "c"
     },
     {
-        question: "My question will go here4?",
+        question: "Which of the following operators means it's not equal to?",
         answers: {
-            a: "incorrect answer",
-            b: "incorrect answer",
-            c: "correct answer"
+            a: "&=",
+            b: "!=",
+            c: "=="
         },
-        correctAnswer: "c"
-    },
-    {
-        question: "My question will go here5?",
-        answers: {
-            a: "incorrect answer",
-            b: "incorrect answer",
-            c: "correct answer"
-        },
-        correctAnswer: "c"
+        correctAnswer: "b"
     }
 ];

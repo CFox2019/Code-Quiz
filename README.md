@@ -87,5 +87,14 @@ You are required to submit BOTH of the following for review:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
+
+
+
+
+## Resources
+
+* ![W3schools](https://www.w3schools.com/css/css_syntax.asp)
+* ![MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+
 - - -
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
