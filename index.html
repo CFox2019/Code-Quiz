@@ -8,11 +8,18 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">View Highscores</a>
+        </div>
+    </nav>
+
     <header>
         <h1>Coding Quiz Challenge</h1>
     </header>
 
     <main>
+
         <section id="intro">
             <p>
                 Complete the code quiz within the allotted time. Incorrect answers will result in score time taken away by ten seconds!
@@ -30,22 +37,33 @@
         </section>
 
         <section id="game-over" class="hidden">
-            Game Over!!!
+            <p>
+                Game Over!!!
+            </p>
             <form id="player-info" class="row g-3">
                 <label class="col-sm-2 col-form-label" for="score">Score</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="score" readonly>
                 </div>
                 <label class="col-sm-2 col-form-label" for="initials">Initials</label>
-                <div class="col-sm-10">
+                <div class="col-sm-6">
                     <input type="text" class="form-control" id="initials">
                 </div>
-                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                </div>
             </form>
         </section>
 
         <section id="leader-board" class="hidden">
-            <div id="player-scores"></div>
+            <p>
+                Highscores
+            </p>
+            <div id="player-scores" class="row"></div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary" id="submit-go-back-btn">Go Back</button>
+                <button type="submit" class="btn btn-primary" id="submit-clear-scores-btn">Clear Highscores</button>
+            </div>
         </section>
     </main>
 

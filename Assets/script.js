@@ -6,7 +6,6 @@ var quizAnswers = document.getElementById('quiz-answers')
 var scoreBoardSection = document.getElementById('score-board')
 var scoreTimer = document.getElementById('score-timer')
 var gameOverSection = document.getElementById('game-over')
-var leaderBoard = JSON.parse(localStorage.getItem('leaderBoard')) || []
 
 var isWin = false
 var currentQuestionIndex = 0
@@ -102,12 +101,14 @@ function submitPlayerInfo(e) {
         score: timerCount,
         initials: document.getElementById('initials').value
     }
+    var leaderBoard = getLeaderBoard()
     leaderBoard.push(playerInfo)
     localStorage.setItem('leaderBoard', JSON.stringify(leaderBoard))
     showLeaderBoard()
 }
 
 function showLeaderBoard() {
+    var leaderBoard = getLeaderBoard()
     var leaderBoardSection = document.getElementById('leader-board')
     leaderBoardSection.classList.remove('hidden')
     gameOverSection.classList.add('hidden')
@@ -127,6 +128,8 @@ function showLeaderBoard() {
         quizAnswers.appendChild(answerButton)
         answerButton.addEventListener("click", answerClicked)
     });
+    document.getElementById('submit-go-back-btn').addEventListener("click", intro)
+    document.getElementById('submit-clear-scores-btn').addEventListener("click", clearScoresEntry)
 }
 
 // Answer click will receive the user selected answer and validate if it is correct
@@ -167,6 +170,23 @@ function startTimer() {
             scoreTimer.innerHTML = timerCount
         }
     }, 1000)
+}
+
+// This function will clear scores on leader board screen, if clear highscores is clicked
+function clearScoresEntry() {
+
+}
+
+function getLeaderBoard() {
+    return (JSON.parse(localStorage.getItem('leaderBoard')) || []).sort((a, b) => { 
+        if (b.score < a.score) { 
+            return -1 
+        } else if (b.score > a.score) { 
+            return 1 
+        } else { 
+            return 0 
+        }
+    }).splice(0, 5)
 }
 
 // startButton event listener calls startQuiz function on click

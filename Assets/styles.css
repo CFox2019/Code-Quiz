@@ -1,3 +1,8 @@
+#navBar {
+    color: #800080;
+    padding: 10px;
+}
+
 header {
     text-align: center;
     margin-top: 50px;
@@ -47,4 +52,27 @@ p {
 
 .hidden {
     display: none;
+}
+
+#game-over {
+    font-size: 1.5em;
+    text-align: center;
+    width: 500px;
+    margin: 100px auto;
+}
+
+#submit {
+    background-color: #800080;
+    border-radius: 8px;
+}
+
+#leader-board {
+    width: 500px;
+    margin: 100px auto;
+}
+
+#submit-go-back-btn,
+#submit-clear-scores-btn {
+    background-color: #800080;
+    border-radius: 8px;
 }
