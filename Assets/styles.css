@@ -1,11 +1,23 @@
-#navBar {
+.navbar-light .navbar-brand {
     color: #800080;
-    padding: 10px;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #800080;
+}
+
+.navbar-light .navbar-brand:visited {
+    color: #800080;
 }
 
 header {
     text-align: center;
     margin-top: 50px;
+}
+
+main {
+    margin: 100px auto;
+    width: 500px;
 }
 
 #intro {

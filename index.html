@@ -10,7 +10,7 @@
 
     <nav class="navbar navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">View Highscores</a>
+          <a id="view-highscores" class="navbar-brand" href="#">View Highscores</a>
         </div>
     </nav>
 
@@ -19,7 +19,6 @@
     </header>
 
     <main>
-
         <section id="intro">
             <p>
                 Complete the code quiz within the allotted time. Incorrect answers will result in score time taken away by ten seconds!
@@ -32,7 +31,6 @@
         <section id="quiz" class="hidden">
             <div id="quiz-question"></div>
             <div id="quiz-answers"></div>
-            <div id="answer-feedback"></div>
             <div id="score-timer"></div>
         </section>
 
@@ -64,6 +62,10 @@
                 <button type="submit" class="btn btn-primary" id="submit-go-back-btn">Go Back</button>
                 <button type="submit" class="btn btn-primary" id="submit-clear-scores-btn">Clear Highscores</button>
             </div>
+        </section>
+
+        <section>
+            <div id="answer-feedback"></div>
         </section>
     </main>
 

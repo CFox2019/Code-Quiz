@@ -9,7 +9,7 @@ var gameOverSection = document.getElementById('game-over')
 
 var isWin = false
 var currentQuestionIndex = 0
-var timerCount = 30
+var timerCount = 60
 var timer = null
 
 // Quiz Questions
@@ -69,6 +69,19 @@ function startQuiz() {
     startTimer()
 }
 
+// The startTimer function starts and stops the timer and shows the score
+function startTimer() {
+    scoreTimer.innerHTML = timerCount
+    timer = setInterval(function() {
+        timerCount--
+        if (timerCount <= 0) {
+            showGameOverScreen()
+        } else {
+            scoreTimer.innerHTML = timerCount
+        }
+    }, 1000)
+}
+
 // After clicking start, the questions will begin
 function showCurrentQuestion() {
     var currentQuestion = quizQuestions[currentQuestionIndex]
@@ -77,7 +90,7 @@ function showCurrentQuestion() {
     quizQuestion.textContent = currentQuestion.question
 
     Object.entries(currentQuestion.answers).forEach(entry => {
-        const [key, value] = entry;
+        var [key, value] = entry;
         var answerButton = document.createElement("button")
         answerButton.setAttribute("answer-key", key)
         answerButton.textContent = value
@@ -108,36 +121,26 @@ function submitPlayerInfo(e) {
 }
 
 function showLeaderBoard() {
+    clearInterval(timer)
     var leaderBoard = getLeaderBoard()
     var leaderBoardSection = document.getElementById('leader-board')
     leaderBoardSection.classList.remove('hidden')
     gameOverSection.classList.add('hidden')
+    introSection.classList.add('hidden')
+    quizSection.classList.add('hidden')
     var playerScores = document.getElementById('player-scores')
+    playerScores.innerHTML = ""
     leaderBoard.forEach(function(playerScore) {
-        console.log('playerScore', playerScore);
-        // const [score, initials] = playerScore
         var playerEntry = document.createElement('p')
         playerEntry.innerHTML = `${playerScore.initials}: ${playerScore.score}`
         playerScores.appendChild(playerEntry)
     })
-    Object.entries(leaderBoard).forEach(entry => {
-        const [key, value] = entry;
-        var answerButton = document.createElement("button")
-        answerButton.setAttribute("answer-key", key)
-        answerButton.textContent = value
-        quizAnswers.appendChild(answerButton)
-        answerButton.addEventListener("click", answerClicked)
-    });
     document.getElementById('submit-go-back-btn').addEventListener("click", intro)
     document.getElementById('submit-clear-scores-btn').addEventListener("click", clearScoresEntry)
 }
 
 // Answer click will receive the user selected answer and validate if it is correct
 function answerClicked(event) {
-    if (currentQuestionIndex >= quizQuestions.length - 1) {
-        showGameOverScreen()
-        return
-    }
     var currentQuestion = quizQuestions[currentQuestionIndex]
     var answerButton = event.target
     console.log("answer button", answerButton);
@@ -156,38 +159,33 @@ function answerClicked(event) {
     setTimeout(function() {
         answerFeedback.innerHTML = ""
     }, 1000)
-    showCurrentQuestion()
-}
-
-// The startTimer function starts and stops the timer and shows the score
-function startTimer() {
-    scoreTimer.innerHTML = timerCount
-    timer = setInterval(function() {
-        timerCount--
-        if (timerCount <= 0) {
-            showGameOverScreen()
-        } else {
-            scoreTimer.innerHTML = timerCount
-        }
-    }, 1000)
+    if (currentQuestionIndex >= quizQuestions.length - 1) {
+        showGameOverScreen()
+    } else {
+        showCurrentQuestion()
+    }
 }
 
 // This function will clear scores on leader board screen, if clear highscores is clicked
 function clearScoresEntry() {
-
+    localStorage.removeItem('playerInfo')
 }
 
 function getLeaderBoard() {
-    return (JSON.parse(localStorage.getItem('leaderBoard')) || []).sort((a, b) => { 
-        if (b.score < a.score) { 
-            return -1 
-        } else if (b.score > a.score) { 
-            return 1 
-        } else { 
-            return 0 
+    return (JSON.parse(localStorage.getItem('leaderBoard')) || []).sort((a, b) => {
+        if (b.score < a.score) {
+            return -1
+        } else if (b.score > a.score) {
+            return 1
+        } else {
+            return 0
         }
     }).splice(0, 5)
 }
 
-// startButton event listener calls startQuiz function on click
+// Event listeners
 startButton.addEventListener("click", startQuiz)
+document.getElementById('view-highscores').addEventListener("click", (e) => {
+    e.preventDefault()
+    showLeaderBoard()
+})
