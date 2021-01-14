@@ -15,7 +15,7 @@
     <main>
         <section id="intro">
             <p>
-            Complete the code quiz within the allotted time. Incorrect answers will result in score time taken away by ten seconds!
+                Complete the code quiz within the allotted time. Incorrect answers will result in score time taken away by ten seconds!
             </p>
             <div>
                 <button class="btn btn-primary" id="start" type="submit">Start</button>
@@ -25,8 +25,27 @@
         <section id="quiz" class="hidden">
             <div id="quiz-question"></div>
             <div id="quiz-answers"></div>
+            <div id="answer-feedback"></div>
             <div id="score-timer"></div>
-            <div id="score-board"></div>
+        </section>
+
+        <section id="game-over" class="hidden">
+            Game Over!!!
+            <form id="player-info" class="row g-3">
+                <label class="col-sm-2 col-form-label" for="score">Score</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="score" readonly>
+                </div>
+                <label class="col-sm-2 col-form-label" for="initials">Initials</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="initials">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="leader-board" class="hidden">
+            <div id="player-scores"></div>
         </section>
     </main>
 
