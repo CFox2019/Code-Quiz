@@ -6,6 +6,7 @@ var quizAnswers = document.getElementById('quiz-answers')
 var scoreBoardSection = document.getElementById('score-board')
 var scoreTimer = document.getElementById('score-timer')
 var gameOverSection = document.getElementById('game-over')
+var leaderBoardSection = document.getElementById('leader-board')
 
 var isWin = false
 var currentQuestionIndex = 0
@@ -123,7 +124,6 @@ function submitPlayerInfo(e) {
 function showLeaderBoard() {
     clearInterval(timer)
     var leaderBoard = getLeaderBoard()
-    var leaderBoardSection = document.getElementById('leader-board')
     leaderBoardSection.classList.remove('hidden')
     gameOverSection.classList.add('hidden')
     introSection.classList.add('hidden')
@@ -135,7 +135,7 @@ function showLeaderBoard() {
         playerEntry.innerHTML = `${playerScore.initials}: ${playerScore.score}`
         playerScores.appendChild(playerEntry)
     })
-    document.getElementById('submit-go-back-btn').addEventListener("click", intro)
+    document.getElementById('submit-go-back-btn').addEventListener("click", showIntroScreen)
     document.getElementById('submit-clear-scores-btn').addEventListener("click", clearScoresEntry)
 }
 
@@ -168,7 +168,15 @@ function answerClicked(event) {
 
 // This function will clear scores on leader board screen, if clear highscores is clicked
 function clearScoresEntry() {
-    localStorage.removeItem('playerInfo')
+    localStorage.removeItem('leaderBoard')
+    showLeaderBoard()
+}
+
+function showIntroScreen() {
+    leaderBoardSection.classList.add('hidden')
+    gameOverSection.classList.add('hidden')
+    quizSection.classList.add('hidden')
+    introSection.classList.remove('hidden')
 }
 
 function getLeaderBoard() {
