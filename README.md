@@ -8,14 +8,14 @@ To play the challenge, you begin by clicking 'Start'. The time will begin as soo
 
 ### Resources
 
-* ![W3schools](https://www.w3schools.com/css/css_syntax.asp)
-* ![MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+* [W3schools](https://www.w3schools.com/css/css_syntax.asp)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
 
 ### Screenshot
 
 ![coding-quiz-challenge](Assets/coding-quiz-screenshot.png)
 
 ### Links:
-![Linkedin](https://www.linkedin.com/in/cdfox/)
-![GitHub](https://github.com/CFox2019)
-![GitHub-Deployed]()
+[Linkedin](https://www.linkedin.com/in/cdfox/)
+[GitHub](https://github.com/CFox2019)
+[GitHub-Deployed]()
