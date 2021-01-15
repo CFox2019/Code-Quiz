@@ -16,6 +16,6 @@ To play the challenge, you begin by clicking 'Start'. The time will begin as soo
 ![coding-quiz-challenge](Assets/coding-quiz-screenshot.png)
 
 ### Links:
-*[Linkedin](https://www.linkedin.com/in/cdfox/)
-*[GitHub](https://github.com/CFox2019)
-*[GitHub-Deployed](https://cfox2019.github.io/Code-Quiz/)
+* [Linkedin](https://www.linkedin.com/in/cdfox/)
+* [GitHub](https://github.com/CFox2019)
+* [GitHub-Deployed](https://cfox2019.github.io/Code-Quiz/)
