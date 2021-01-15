@@ -64,6 +64,8 @@ var quizQuestions = [
 
 // The startQuiz function is called when the start button is clicked
 function startQuiz() {
+    currentQuestionIndex = 0
+    timerCount = 60
     quizSection.classList.remove("hidden")
     introSection.classList.add("hidden")
     showCurrentQuestion()
@@ -85,6 +87,7 @@ function startTimer() {
 
 // After clicking start, the questions will begin
 function showCurrentQuestion() {
+    quizAnswers.innerHTML = ""
     var currentQuestion = quizQuestions[currentQuestionIndex]
 
     var quizQuestion = document.getElementById('quiz-question')
@@ -146,13 +149,12 @@ function answerClicked(event) {
     console.log("answer button", answerButton);
     var answerKey = answerButton.getAttribute("answer-key")
     currentQuestionIndex += 1
-    quizAnswers.innerHTML = ""
     var answerFeedbackMessage = ''
     if (currentQuestion.correctAnswer === answerKey) {
         answerFeedbackMessage = 'Correct!'
     } else {
         answerFeedbackMessage = 'Wrong!'
-        timerCount -= 5
+        timerCount -= 10
     }
     var answerFeedback = document.getElementById('answer-feedback')
     answerFeedback.innerHTML = answerFeedbackMessage
