@@ -14,6 +14,7 @@ To play the challenge, you begin by clicking 'Start'. The time will begin as soo
 ### Screenshot
 
 ![coding-quiz-challenge](Assets/coding-quiz-screenshot.png)
+![coding-quiz-challenge-2](Assets/coding-quiz-screenshot-2.png)
 
 ### Links:
 * [Linkedin](https://www.linkedin.com/in/cdfox/)
